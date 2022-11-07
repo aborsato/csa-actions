@@ -1,0 +1,26 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      firstword:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+    outputs:
+      modifiedfirstword:
+        description: "The modified output from parameter firstword"
+        value: ${{ jobs.change_param.outputs.output1 }}
+
+jobs:
+  change_param:
+    name: Generate output
+    runs-on: ubuntu-latest
+    # Map the job outputs to step outputs
+    outputs:
+      output1: ${{ steps.step1.outputs.st1out }}
+    steps:
+      - id: step1
+        run: echo "st1out=m_${{ inputs.firstword }}" >> $GITHUB_OUTPUT
