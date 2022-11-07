@@ -1,4 +1,4 @@
-name: Workflow Dispatch
+name: Workflow dispatch
 run-name: Workflow Dispatch ${{ github.sha }}
 
 on:
