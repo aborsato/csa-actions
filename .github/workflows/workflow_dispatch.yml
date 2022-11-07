@@ -27,7 +27,7 @@ on:
         required: true 
 
 jobs:
-  print-tag:
+  print-input:
     runs-on: ubuntu-latest
     if:  ${{ inputs.print_tags }} 
     steps:
