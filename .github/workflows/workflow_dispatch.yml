@@ -1,3 +1,6 @@
+name: Workflow Dispatch
+run-name: Workflow Dispatch ${{ github.sha }}
+
 on:
   workflow_dispatch:
     inputs:
